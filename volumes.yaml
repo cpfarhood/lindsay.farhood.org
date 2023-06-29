@@ -19,7 +19,7 @@ spec:
   - rsize=32768
   - wsize=32768
   nfs:
-    path: /mnt/pool0/sites/farhood.org/lindsay
+    path: /mnt/pool0/sites/lindsay-farhood-org/
     server: spielberg.farhoodliquor.dmz
 
 ---
