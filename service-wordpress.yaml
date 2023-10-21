@@ -20,7 +20,7 @@ metadata:
   labels:
     app: wordpress
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress
@@ -50,9 +50,10 @@ spec:
         - containerPort: 80
           name: http
         volumeMounts:
-        - name: wwwdata
+        - name: wwwdata-old
           mountPath: /var/www/html
       volumes:
-      - name: wwwdata
-        persistentVolumeClaim:
-          claimName: wwwdata
+      - name: wwwdata-old
+        nfs:
+          path: /mnt/pool0/sites/lindsay-farhood-org/
+          server: spielberg.farhoodliquor.dmz
