@@ -52,13 +52,7 @@ spec:
         volumeMounts:
         - name: wwwdata
           mountPath: /var/www/html
-        - name: temp
-          mountPath: /temp
       volumes:
       - name: wwwdata
         persistentVolumeClaim:
           claimName: wwwdata
-      - name: temp
-        nfs:
-          server: spielberg.farhoodliquor.dmz
-          path: /mnt/pool0/sites/lindsay-farhood-org
